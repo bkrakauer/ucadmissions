@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>UC Admissions</title>
+</head>
+<body>
+<p>This is a test of the UC Admissions thingy bingy</p>
+    <form id='userinput' method='post' action='results' >
+	{% csrf_token %}
+    <label for='gpa'>GPA: </label>
+	<input id='gpa' type='text' name='gpa' maxlength='5', required />
+	<br>
+	<label for='timeframe'>High School: </label>
+	<select name = "highschool">
+	{% for school in schools %}
+		<option value="{{school}}">{{school}}</option>
+	{% endfor %}
+	</select>
+	<br>
+    <input type='submit' value='Submit' />
+    </form>
+</body>
+</html>
